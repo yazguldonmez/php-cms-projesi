@@ -1,0 +1,22 @@
+{
+    "name": "yazgul/cms",
+    "description": "Phpbasics cms projesi",
+    "autoload": {
+        "psr-4": {
+            "App\\": "./App",
+            "Core\\": "./Core"
+        },
+        "files": [
+            "./App/Helpers/app.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Yazgül Dönmez",
+            "email": "yazgul-donmez@hotmail.com"
+        }
+    ],
+    "require": {
+        "bramus/router": "~1.6"
+    }
+}

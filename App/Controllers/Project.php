@@ -45,7 +45,7 @@ class Project extends BaseController
         }
         $ModelCustomer = new ModelProject();
         $insert = $ModelCustomer->createProject($data);
-        
+
         if ($insert) {
             $status = 'success';
             $title = 'İşlem Başarılı';

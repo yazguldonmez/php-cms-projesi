@@ -31,14 +31,14 @@ class Auth extends BaseController
             exit();
         }
         $AuthModel = new ModelAuth();
-        $access = $AuthModel->userLogin($data); //userLogin fonksiyonunda true ya da false değer dönecekti
-        if ($access) { //eğer dönen değer tru ise bu işlemşer yapılacak
+        $access = $AuthModel->userLogin($data);
+        if ($access) {
             $status = 'success';
             $title = 'İşlem Başarılı';
             $msg = 'İşlem başarıyla tamamlandı.';
             echo json_encode(['status' => $status, 'title' => $title, 'msg' => $msg, 'redirect' => _link()]);
             exit();
-        } else { //false ise bu işlemler yapılcak
+        } else {
             $status = 'error';
             $title = 'Ops! Dikkat';
             $msg = 'Kullanıcı adınız veya şifreniz hatalı lütfen tekrar deneyiniz.';

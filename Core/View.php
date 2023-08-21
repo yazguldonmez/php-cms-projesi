@@ -9,8 +9,8 @@ class View
     {
         ob_start();
         extract($data);
-        require BASEDIR . '/App/View/' . $viewName . '.php';//App/View içinde load a gelen argümana .php ekleyerek döndür
-        $this->content = ob_get_contents();//ob_start ve clean arasına yazılan tüm verileri kaydedip content değişkenine aktarıyoruz
+        require BASEDIR . '/App/View/' . $viewName . '.php';
+        $this->content = ob_get_contents();
         ob_clean();
         return $this->content;
     }

@@ -1,13 +1,11 @@
 <?php
 $cms->router->before('GET|POST', '/', 'Middlewares\AuthMiddleware@isLogin');
 $cms->router->before('GET|POST', '/musteri.*', 'Middlewares\AuthMiddleware@isLogin');
-//getten musteri sorgusu gelirse önce login'i kontrol edecek oturum yoksa islogin giris sayfasına yönlendirecek
-//sadece musteriyi kontrol etmiycek müsteri ardındaki tüm sorguları mesela musteri/ekle oturum yoksa burayada giremez
 $cms->router->before('GET|POST', '/proje.*', 'Middlewares\AuthMiddleware@isLogin');
 
 $cms->router->get('/', 'Controllers\Home@Index');
 //Login page
-$cms->router->get('/giris', 'Controllers\Auth@Index'); //get ile gidilirse index sayfası çalşıacak post ile gidilirse login
+$cms->router->get('/giris', 'Controllers\Auth@Index');
 //Login post
 $cms->router->post('/giris', 'Controllers\Auth@Login');
 $cms->router->get('/cikis', 'Controllers\Auth@Logout');

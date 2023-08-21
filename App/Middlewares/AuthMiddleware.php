@@ -10,10 +10,6 @@ class AuthMiddleware extends BaseMiddleware
     {
         $login = Session::getSession('login');
         if (!$login) {
-        //     echo "oturum kapalı";
-        // }else{
-        //     echo "oturum açık";
-        // }
         session_destroy();
         redirect('giris');
         }
